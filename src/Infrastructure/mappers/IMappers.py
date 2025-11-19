@@ -1,5 +1,5 @@
 from typing import Any, Dict, List
-from src.Domain.ARecord import ARecord
+from src.Domain.entity.ARecord import ARecord
 
 
 class IMappers:

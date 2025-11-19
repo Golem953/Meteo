@@ -1,5 +1,5 @@
 
 class IDataExtractor:
-    def extract(self,limit):
+    def extract(self, limit):
         pass
         

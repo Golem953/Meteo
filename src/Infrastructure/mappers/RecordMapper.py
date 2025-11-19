@@ -1,7 +1,7 @@
 # src/meteo_app/infrastructure/mappers/record_mapper.py
 from typing import Any, Dict, List
 # from ...domain.ports import IDataMapper
-from src.Domain.ARecord import ARecord
+from src.Domain.entity.ARecord import ARecord
 from src.Infrastructure.mappers import IMappers  # ta classe Record métier
 
 class RecordMapper(IMappers):
@@ -9,6 +9,9 @@ class RecordMapper(IMappers):
     Mappe les résultats JSON extraits (liste de mesures météo)
     vers une liste d'objets ARecord du domaine.
     """
+
+    def __init__(self):
+        pass
 
     def to_object(self, data: Dict[str, Any]) -> List[ARecord]:
         """

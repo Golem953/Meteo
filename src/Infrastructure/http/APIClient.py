@@ -12,7 +12,7 @@ class APIClient:
         self.timeout = timeout
         self.session = requests.Session()
 
-    def fetch_records(self, limit: int):
+    def extract(self, limit: int):
         url = f"{self.records_url}&limit={limit}"
         
         response = self.session.get(url, timeout=self.timeout)
