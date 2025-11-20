@@ -28,7 +28,7 @@ def main() -> int:
             print(f"- Station: {station.name} ({len(station.list_of_records)} records)")
             print("  Records:")
             for record in station.list_of_records:
-                print(f"    - id: {record.paris_date}, Temp: {record.temperature}°C, Humidity: {record.humidity}%") 
+                print(f"    - Date: {record.paris_date}, Temp: {record.temperature}°C, Humidity: {record.humidity}%, Pression: {record.pressure}Pa") 
 
 
 

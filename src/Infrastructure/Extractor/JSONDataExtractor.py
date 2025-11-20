@@ -11,7 +11,7 @@ class JSONExtractor(IDataExtractor):
     def __init__(self, json_path: str | Path):
         self.json_path = Path(json_path)
 
-    def extract(self, limit: int = 200) -> List[Dict[str, Any]]:
+    def extract(self, limit: int = 200) -> dict[str, any]:
         if not self.json_path.exists():
             raise FileNotFoundError(f"Fichier JSON introuvable : {self.json_path}")
 
