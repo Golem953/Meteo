@@ -1,46 +1,38 @@
-# public/main.py
+import sys
+import os
+
+ROOT_DIR = os.path.dirname(os.path.dirname(__file__))  
+sys.path.append(ROOT_DIR)
 
 from src.Application.builder.CityBuilder import CityBuilder
+from src.Infrastructure.config.CityStationProvider import CityStationProvider
 
-def main():
-    """
-    Point d’entrée de l’application.
-    Construit les villes à partir d’un CityBuilder,
-    puis affiche ou exploite les résultats.
-    """
+def main() -> int:
+    city_names = ["toulouse"]
 
-    # Liste des villes que l’on veut construire
-    city_names = [
-        "Toulouse",
-    ]
+    provider = CityStationProvider()
 
-    # Liste des stations (ou identifiants de station)
-    # Ex: ["compans", "purpan", "cugnaux"]
-    list_of_stations = [
-        "Compans Cafarelli",
-    ]
-
-    # On instancie le CityBuilder
     builder = CityBuilder(
         names=city_names,
-        list_of_stations=list_of_stations
+        city_station_provider=provider,
     )
 
-    # On construit toutes les villes
     cities = builder.build()
 
-    # TEST : on les affiche
-    for name, city in cities.items():
-        print(f"=== Ville : {name.upper()} ===")
-        print(f"Nombre de stations : {len(city.stations)}")
+    # print(cities["toulouse"].stations[0].name)
+    # exit(0)
 
+    for name, city in cities.items():
+        print(f"=== {name.upper()} ===")
         for station in city.stations:
-            print(f"  - Station : {station.name}")
-            print(f"    Nombre de records : {len(station.records)}")
-            print()
+            print(f"- Station: {station.name} ({len(station.list_of_records)} records)")
+            print("  Records:")
+            for record in station.list_of_records:
+                print(f"    - id: {record.paris_date}, Temp: {record.temperature}°C, Humidity: {record.humidity}%") 
+
+
 
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

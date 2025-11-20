@@ -1,8 +1,9 @@
 from src.Domain.entity.AStation import AStation
 from src.Domain.entity.ARecord import ARecord
 from typing import List
+from src.Domain.ports.IMappers import IMappers
 
-class StationMapper:
+class StationMapper(IMappers):
     """
     Mapper pour convertir les données JSON des stations météorologiques 
     vers des objets de domaine AStation.

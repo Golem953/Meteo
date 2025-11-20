@@ -1,4 +1,4 @@
-from src.Infrastructure.extractor.IDataExtractor import IDataExtractor
+from Domain.ports.IDataExtractor import IDataExtractor
 from src.Infrastructure.http.APIClient import APIClient
 
 class APIDataExtractor(IDataExtractor):

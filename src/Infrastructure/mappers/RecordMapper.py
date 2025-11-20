@@ -2,7 +2,7 @@
 from typing import Any, Dict, List
 # from ...domain.ports import IDataMapper
 from src.Domain.entity.ARecord import ARecord
-from src.Infrastructure.mappers import IMappers  # ta classe Record métier
+from src.Domain.ports.IMappers import IMappers  # ta classe Record métier
 
 class RecordMapper(IMappers):
     """

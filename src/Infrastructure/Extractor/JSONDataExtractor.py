@@ -1,4 +1,4 @@
-from src.Infrastructure.extractor.IDataExtractor import IDataExtractor
+from Domain.ports.IDataExtractor import IDataExtractor
 import json
 from pathlib import Path
 from typing import Any, List, Dict

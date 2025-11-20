@@ -11,9 +11,11 @@ class APIClient:
         self.records_url = records_url.rstrip("/")
         self.timeout = timeout
         self.session = requests.Session()
+        self.options_url = configuration.API_OPTIONS_URL
 
-    def extract(self, limit: int):
-        url = f"{self.records_url}&limit={limit}"
+    def extract(self, limit: int, file_name: str = "") -> dict:
+        # url = f"{self.records_url}&limit={limit}"
+        url = f"{self.base_url}/{file_name}/{self.options_url}&limit={limit}"
         
         response = self.session.get(url, timeout=self.timeout)
         response.raise_for_status()

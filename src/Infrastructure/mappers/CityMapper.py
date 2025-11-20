@@ -1,8 +1,9 @@
 from src.Domain.entity.ACity import ACity
 from src.Domain.entity.AStation import AStation
 from typing import Any, Dict
+from src.Domain.ports.IMappers import IMappers
 
-class CityMapper:
+class CityMapper(IMappers):
     """
     Mapper pour convertir les données de la ville
     depuis le format JSON vers un objet de domaine.
