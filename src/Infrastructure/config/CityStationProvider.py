@@ -1,6 +1,6 @@
 import json
 from typing import Dict, List, Optional
-from Domain.configuration import configuration
+from Domain.Configuration import Configuration
 from src.Domain.ports.ICityStationProvider import ICityStationProvider
 
 
@@ -12,7 +12,7 @@ class CityStationProvider(ICityStationProvider):
     """
 
     def __init__(self) -> None:
-        self._path = configuration.PATH_CONFIG_MAPPING
+        self._path = Configuration.PATH_CONFIG_MAPPING
         self._mapping: Dict[str, Dict[str, str]] = self._load()
 
     def _load(self) -> Dict[str, Dict[str, str]]:

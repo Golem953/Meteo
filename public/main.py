@@ -5,12 +5,12 @@ ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(ROOT_DIR)
 
 from src.Application.builder.CityBuilder import CityBuilder
-from src.Infrastructure.config.CityStationProvider import CityStationProvider
+from src.Infrastructure.config.CityStationConfigMemoryProvider import CityStationConfigMemoryProvider
 
 def main() -> int:
     city_names = ["toulouse"]
 
-    provider = CityStationProvider()
+    provider = CityStationConfigMemoryProvider()
 
     builder = CityBuilder(
         names=city_names,

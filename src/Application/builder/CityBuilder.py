@@ -17,9 +17,12 @@ class CityBuilder(IBuilder):
 
     def build(self) -> dict[str, ACity]:
         cities: dict[str, ACity] = {}
-        
+        # print("Building cities...")
         for name in self.names:
+           
             station_keys = self._city_station_provider.get_stations_for_city(name)
+            
+            
             stations = []
             
             for station_key in station_keys:

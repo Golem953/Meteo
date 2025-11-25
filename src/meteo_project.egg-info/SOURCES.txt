@@ -5,7 +5,7 @@ src/Application/__init__.py
 src/Application/builder/CityBuilder.py
 src/Application/builder/__init__.py
 src/Domain/__init__.py
-src/Domain/configuration.py
+src/Domain/Configuration.py
 src/Domain/entity/ACity.py
 src/Domain/entity/ARecord.py
 src/Domain/entity/AStation.py
