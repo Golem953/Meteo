@@ -1,6 +1,7 @@
-from typing import Dict, List, Optional
+from typing import List, Optional
 
 from Domain.ports.ICityStationProvider import ICityStationProvider
+
 
 class CityStationConfigMemoryProvider(ICityStationProvider):
 
@@ -12,12 +13,11 @@ class CityStationConfigMemoryProvider(ICityStationProvider):
             }
         }
 
-
     def get_stations_for_city(self, city: str) -> List[str]:
-        
+
         city_key = city.lower()
         stations = self._mapping.get(city_key, {})
-       
+
         return list(stations.keys())
 
     def get_file_for_station(self, station_key: str) -> Optional[str]:

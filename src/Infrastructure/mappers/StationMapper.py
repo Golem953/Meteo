@@ -1,7 +1,7 @@
 from src.Domain.entity.AStation import AStation
 from src.Domain.entity.ARecord import ARecord
-from typing import List
 from src.Domain.ports.IMappers import IMappers
+
 
 class StationMapper(IMappers):
     """

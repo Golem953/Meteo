@@ -8,7 +8,7 @@ class CityStationProvider(ICityStationProvider):
     """
     Adapter concret qui lit un JSON et fournit les infos de mapping.
 
- 
+
     """
 
     def __init__(self) -> None:
@@ -36,4 +36,3 @@ class CityStationProvider(ICityStationProvider):
             if key in stations:
                 return stations[key]
         return None
- 

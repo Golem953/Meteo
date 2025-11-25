@@ -16,7 +16,7 @@ class APIClient:
     def extract(self, limit: int, file_name: str = "") -> dict:
         # url = f"{self.records_url}&limit={limit}"
         url = f"{self.base_url}/{file_name}/{self.options_url}&limit={limit}"
-        
+
         response = self.session.get(url, timeout=self.timeout)
         response.raise_for_status()
         return response.json()

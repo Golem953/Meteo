@@ -1,11 +1,11 @@
 import sys
 import os
-
-ROOT_DIR = os.path.dirname(os.path.dirname(__file__))  
-sys.path.append(ROOT_DIR)
-
 from src.Application.builder.CityBuilder import CityBuilder
 from src.Infrastructure.config.CityStationConfigMemoryProvider import CityStationConfigMemoryProvider
+
+ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
+sys.path.append(ROOT_DIR)
+
 
 def main() -> int:
     city_names = ["toulouse"]
@@ -25,14 +25,15 @@ def main() -> int:
     for name, city in cities.items():
         print(f"=== {name.upper()} ===")
         for station in city.stations:
-            print(f"- Station: {station.name} ({len(station.list_of_records)} records)")
+            print(
+                f"- Station: {station.name} ({len(station.list_of_records)} records)")
             print("  Records:")
             for record in station.list_of_records:
-                print(f"    - Date: {record.paris_date}, Temp: {record.temperature}°C, Humidity: {record.humidity}%, Pression: {record.pressure}Pa") 
-
-
+                print(
+                    f"    - Date: {record.paris_date}, Temp: {record.temperature}°C, Humidity: {record.humidity}%, Pression: {record.pressure}Pa")
 
     return 0
+
 
 if __name__ == "__main__":
     raise SystemExit(main())

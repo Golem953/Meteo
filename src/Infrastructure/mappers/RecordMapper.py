@@ -4,6 +4,7 @@ from typing import Any, Dict, List
 from src.Domain.entity.ARecord import ARecord
 from src.Domain.ports.IMappers import IMappers  # ta classe Record métier
 
+
 class RecordMapper(IMappers):
     """
     Mappe les résultats JSON extraits (liste de mesures météo)
@@ -26,7 +27,8 @@ class RecordMapper(IMappers):
                     paris_date=item.get("heure_de_paris"),
                     temperature=float(item.get("temperature_en_degre_c", 0.0)),
                     humidity=float(item.get("humidite", 0.0)),
-                    pressure=int(item.get("pression", 0)) // 100,  # conversion Pa -> hPa
+                    # conversion Pa -> hPa
+                    pressure=int(item.get("pression", 0)) // 100,
                 )
                 records.append(record)
             except Exception as e:

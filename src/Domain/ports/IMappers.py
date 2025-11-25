@@ -1,5 +1,4 @@
 from typing import Any, Dict, List, Protocol
-from src.Domain.entity.ARecord import ARecord
 
 
 class IMappers(Protocol):
