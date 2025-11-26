@@ -12,8 +12,8 @@ class StationMapper(IMappers):
     def __init__(self):
         pass
 
-    def to_object(self, name: str, list_of_records: list[ARecord]) -> AStation:
+    def to_object(self, name: str, file_name: str, list_of_records: list[ARecord]) -> AStation:
 
-        a_station = AStation(name=name, list_of_records=list_of_records)
+        a_station = AStation(name=name, file_name=file_name, list_of_records=list_of_records)
 
         return a_station

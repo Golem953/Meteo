@@ -1,6 +1,6 @@
 import json
 from typing import Dict, List, Optional
-from Domain.Configuration import Configuration
+from Domain.service.Configuration import Configuration
 from src.Domain.ports.ICityStationProvider import ICityStationProvider
 
 

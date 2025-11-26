@@ -1,6 +1,6 @@
 # src/infrastructure/api_client.py
 import requests
-from src.Domain.Configuration import Configuration
+from src.Domain.service.Configuration import Configuration
 
 
 class APIClient:
