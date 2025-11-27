@@ -13,21 +13,33 @@ class LinkedList(IDataStructure):
         # print("New node to add: "+ first_node.get_value())
         self.get_last().set_next(first_node)
 
-    
+    def remove_node(self, value: str) -> bool:
+        # Cas où la liste est vide
+        if self.first_node is None:
+            return False
 
+        # Cas où le premier élément est celui à supprimer
+        if self.first_node.get_value() == value:
+            self.first_node = self.first_node.get_next()
+            return True
 
-    def search(self, value):
-        actual_node = self.first_node
+        # Parcourir la liste pour trouver le nœud à supprimer
+        prev = self.first_node
+        current = self.first_node.get_next()
 
-        while actual_node != None:
-
-            if actual_node.get_value() == value:
+        while current is not None:
+            if current.get_value() == value:
+                # On saute le node à supprimer
+                prev.set_next(current.get_next())
                 return True
 
-            actual_node = actual_node.get_next()
+            prev = current
+            current = current.get_next()
 
+        # Si aucun node trouvé
         return False
     
+
     # Renvoie le dernier élément de la liste (Celui avec get_next() = None)
     def get_last(self):
         actual_node = self.first_node

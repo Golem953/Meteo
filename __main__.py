@@ -6,7 +6,7 @@ sys.path.append(ROOT_DIR)
 
 from src.Application.builder.CityBuilder import CityBuilder
 
-from src.Infrastructure.config.CityStationConfigMemoryProvider import CityStationConfigMemoryProvider
+from src.Infrastructure.provider.CityStationConfigMemoryProvider import CityStationConfigMemoryProvider
 
 def main() -> int:
     city_names = ["toulouse"]

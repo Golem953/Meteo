@@ -12,14 +12,14 @@ class IDataStructure(ABC, Generic[T]):
     """
 
 
-    def add(self, value: T) -> None:
+    @abstractmethod
+    def add_node(self, value: T) -> None:
         """Add a value into the data structure."""
         pass
 
-
     @abstractmethod
-    def search(self, value: T) -> bool:
-        """Return True if the value exists in the data structure."""
+    def remove_node(self, value: T) -> None:
+        """Remove a value from the data structure."""
         pass
 
     @abstractmethod

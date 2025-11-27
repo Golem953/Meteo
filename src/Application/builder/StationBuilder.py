@@ -3,7 +3,7 @@ from Domain.ports.ICityStationProvider import ICityStationProvider
 from src.Infrastructure.mappers.CityMapper import CityMapper
 from Domain.ports.IBuilder import IBuilder
 from src.Infrastructure.mappers.StationMapper import StationMapper
-from src.Infrastructure.config.CityStationConfigMemoryProvider import (
+from src.Infrastructure.provider.CityStationConfigMemoryProvider import (
     CityStationConfigMemoryProvider,
 )
 from src.Infrastructure.http.APIClient import APIClient
