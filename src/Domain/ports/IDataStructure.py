@@ -21,8 +21,3 @@ class IDataStructure(ABC, Generic[T]):
     def remove_node(self, value: T) -> None:
         """Remove a value from the data structure."""
         pass
-
-    @abstractmethod
-    def __iter__(self) -> Iterable[T]:
-        """Return an iterator over the stored values."""
-        pass

@@ -8,9 +8,11 @@ class QueueList(IDataStructure):
     Uses append() for enqueue and pop(0) for dequeue/remove.
     """
 
-    def __init__(self):
-        self._items: list[ANodeQueueList] = []
-
+    def __init__(self, first_node: ANodeQueueList):
+        self.first_node = first_node
+        self._items: list[ANodeQueueList] = [self.first_node]
+        
+    
     # -----------------------------------
     #              ADD (ENQUEUE)
     # -----------------------------------
@@ -25,3 +27,4 @@ class QueueList(IDataStructure):
             return True
         except IndexError:
             return False
+

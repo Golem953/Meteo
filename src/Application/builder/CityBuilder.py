@@ -1,10 +1,9 @@
 from Application.builder.StationBuilder import StationBuilder
+from Domain.entity.ANodeQueueList import ANodeQueueList
 from Domain.ports.ICityStationProvider import ICityStationProvider
+from Infrastructure.structures.QueueList import QueueList
 from src.Infrastructure.mappers.CityMapper import CityMapper
 from Domain.ports.IBuilder import IBuilder
-from src.Infrastructure.mappers.StationMapper import StationMapper
-from src.Infrastructure.mappers.RecordMapper import RecordMapper
-from src.Infrastructure.http.APIClient import APIClient
 from src.Domain.entity.ACity import ACity
 from src.Infrastructure.structures.LinkedList import LinkedList
 from src.Domain.entity.ANodeLinkedList import ANodeLinkedList
@@ -20,9 +19,6 @@ class CityBuilder(IBuilder):
         self.names_city = names_city
         self.stations_choose = stations_choose
         self.city_mapper = CityMapper()
-        self.station_mapper = StationMapper()
-        self.record_mapper = RecordMapper()
-        self.api_data_extractor = APIClient()
         self._city_station_provider = city_station_provider
 
     def build(self) -> dict[str, ACity]:
@@ -41,12 +37,11 @@ class CityBuilder(IBuilder):
 
                     if first_station:
 
-                        linked_list_station = LinkedList(ANodeLinkedList(station_key))
+                        linked_list_station = QueueList(ANodeQueueList(station_key))
                         first_station = False
                     else:
 
-                        linked_list_station.add_node(ANodeLinkedList(station_key))
-
+                        linked_list_station.add_node(ANodeQueueList(station_key))
         actual_node = linked_list_station.first_node
 
         while actual_node != None:
