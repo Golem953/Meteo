@@ -39,10 +39,13 @@ class CityBuilder(IBuilder):
                     if first_station:
 
                         linked_list_station = QueueList(ANodeQueueList(station_key))
+                        # linked_list_station = LinkedList(ANodeLinkedList(station_key))
+                        
                         first_station = False
                     else:
 
                         linked_list_station.add_node(ANodeQueueList(station_key))
+                        # linked_list_station.add_node(ANodeLinkedList(station_key))
         actual_node = linked_list_station.first_node
 
         while actual_node != None:
