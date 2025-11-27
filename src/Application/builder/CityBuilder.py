@@ -33,8 +33,9 @@ class CityBuilder(IBuilder):
             first_station = True
             for station_key in station_keys:
 
+                
                 if station_key in self.stations_choose:
-
+                    
                     if first_station:
 
                         linked_list_station = QueueList(ANodeQueueList(station_key))
@@ -52,7 +53,7 @@ class CityBuilder(IBuilder):
                     city_station_provider=self._city_station_provider,
                 ).build()
             )
-
+           
             actual_node = actual_node.get_next()
 
         city = self.city_mapper.to_object(name=name_city, list_of_stations=stations)
