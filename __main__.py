@@ -1,19 +1,22 @@
 import sys
 import os
-from src.Application.builder.CityBuilder import CityBuilder
-from src.Infrastructure.config.CityStationConfigMemoryProvider import CityStationConfigMemoryProvider
-
-ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
+ROOT_DIR = os.path.dirname(__file__)  # ...\Meteo
 sys.path.append(ROOT_DIR)
 
 
+from src.Application.builder.CityBuilder import CityBuilder
+
+from src.Infrastructure.config.CityStationConfigMemoryProvider import CityStationConfigMemoryProvider
+
 def main() -> int:
     city_names = ["toulouse"]
+    city_station = ["compans cafarelli", "universite paul sabatier",]
 
     provider = CityStationConfigMemoryProvider()
 
     builder = CityBuilder(
-        names=city_names,
+        names_city=city_names,
+        stations_choose=city_station,
         city_station_provider=provider,
     )
 

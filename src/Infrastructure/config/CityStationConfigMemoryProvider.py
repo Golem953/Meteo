@@ -9,7 +9,7 @@ class CityStationConfigMemoryProvider(ICityStationProvider):
         self._mapping: dict[str, str] = {
             "toulouse": {
                 "compans cafarelli": "42-station-meteo-toulouse-parc-compans-cafarelli",
-                "université paul sabatier": "37-station-meteo-toulouse-universite-paul-sabatier",
+                "universite paul sabatier": "37-station-meteo-toulouse-universite-paul-sabatier",
             }
         }
 
