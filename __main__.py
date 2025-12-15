@@ -45,7 +45,7 @@ def main() -> int:
             print("  Records:")
             for record in station.list_of_records:
                 print(
-                    f"    - Date: {record.paris_date}, Temp: {record.temperature}°C, Humidity: {record.humidity}%, Pression: {record.pressure}Pa"
+                    f"    - Date: {record.paris_date}, Temp: {record.temperature.get_value()}°C, Humidity: {record.humidity.get_value()}%, Pression: {record.pressure.get_value()}Pa"
                 )
 
     return 0

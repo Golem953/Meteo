@@ -1,19 +1,19 @@
 # src/infrastructure/api_client.py
 import requests
-from src.Domain.service.Configuration import Configuration
+from src.Domain.config.Configuration import Configuration
 
 
 class APIClient:
     def __init__(
-        self, base_url: str = Configuration.API_BASE_URL, records_url: str = Configuration.API_RECORDS_URL, timeout: int = Configuration.API_TIMEOUT
+        self, config: Configuration
     ):
-        self.base_url = base_url.rstrip("/")
-        self.records_url = records_url.rstrip("/")
-        self.timeout = timeout
+        self.base_url = config.API_BASE_URL.rstrip("/")
+        self.records_url = config.API_RECORDS_URL.rstrip("/")
+        self.timeout = config.API_TIMEOUT
         self.session = requests.Session()
-        self.options_url = Configuration.API_OPTIONS_URL
+        self.options_url = config.API_OPTIONS_URL
 
-    def extract(self, limit: int, file_name: str = "") -> dict:
+    def call(self, limit: int, file_name: str = "") -> dict:
         # url = f"{self.records_url}&limit={limit}"
         url = f"{self.base_url}/{file_name}/{self.options_url}&limit={limit}"
 

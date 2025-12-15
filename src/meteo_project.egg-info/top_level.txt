@@ -1,5 +1,0 @@
-Application
-Domain
-Infrastructure
-__init__
-presentation

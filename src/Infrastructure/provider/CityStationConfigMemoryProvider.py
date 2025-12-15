@@ -5,13 +5,17 @@ from Infrastructure.interface.ICityStationProvider import ICityStationProvider
 
 class CityStationConfigMemoryProvider(ICityStationProvider):
 
-    def __init__(self) -> None:
-        self._mapping: dict[str, str] = {
-            "toulouse": {
-                "compans cafarelli": "42-station-meteo-toulouse-parc-compans-cafarelli",
-                "universite paul sabatier": "37-station-meteo-toulouse-universite-paul-sabatier",
-            }
-        }
+    _instance = None
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance._mapping = {
+                "toulouse": {
+                    "compans cafarelli": "42-station-meteo-toulouse-parc-compans-cafarelli",
+                    "universite paul sabatier": "37-station-meteo-toulouse-universite-paul-sabatier",
+                }
+            } 
+        return cls._instance
 
     def get_stations_for_city(self, city: str) -> List[str]:
 

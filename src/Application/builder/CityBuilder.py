@@ -7,7 +7,7 @@ from Application.interface.IBuilder import IBuilder
 from src.Domain.entity.ACity import ACity
 from src.Infrastructure.structures.LinkedList import LinkedList
 from src.Domain.entity.ANodeLinkedList import ANodeLinkedList
-
+from Domain.config.Configuration import Configuration
 
 class CityBuilder(IBuilder):
 
@@ -43,6 +43,10 @@ class CityBuilder(IBuilder):
             raise ValueError("City station provider not set")
 
         cities: dict[str, ACity] = {}
+
+        config = Configuration()
+
+        
         # print("Building cities...")
         for name_city in self.names_city:
 
@@ -70,7 +74,7 @@ class CityBuilder(IBuilder):
         while actual_node != None:
 
             station_builder = (
-                StationBuilder()
+                StationBuilder(config)
                 .set_name_station(actual_node.get_value())
                 .set_city_station_provider(self._city_station_provider)
                 .build()
