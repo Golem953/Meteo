@@ -1,7 +1,7 @@
 from src.Domain.entity.AStation import AStation
-from Domain.ports.ICityStationProvider import ICityStationProvider
+from Infrastructure.interface.ICityStationProvider import ICityStationProvider
 from src.Infrastructure.mappers.CityMapper import CityMapper
-from Domain.ports.IBuilder import IBuilder
+from Application.interface.IBuilder import IBuilder
 from src.Infrastructure.mappers.StationMapper import StationMapper
 from src.Infrastructure.provider.CityStationConfigMemoryProvider import (
     CityStationConfigMemoryProvider,

@@ -10,10 +10,10 @@ src/Domain/entity/ACity.py
 src/Domain/entity/ARecord.py
 src/Domain/entity/AStation.py
 src/Domain/entity/__init__.py
-src/Domain/ports/IBuilder.py
-src/Domain/ports/ICityStationProvider.py
-src/Domain/ports/IDataExtractor.py
-src/Domain/ports/IMappers.py
+src/Domain/interface/IBuilder.py
+src/Domain/interface/ICityStationProvider.py
+src/Domain/interface/IDataExtractor.py
+src/Domain/interface/IMappers.py
 src/Infrastructure/__init__.py
 src/Infrastructure/config/CityStationProvider.py
 src/Infrastructure/extractor/APIDataExtractor.py

@@ -1,5 +1,5 @@
 
-from src.Domain.ports.IDataStructure import IDataStructure, T
+from src.Infrastructure.interface.IDataStructure import IDataStructure, T
 from src.Domain.entity.ANodeQueueList import ANodeQueueList
 
 class QueueList(IDataStructure):

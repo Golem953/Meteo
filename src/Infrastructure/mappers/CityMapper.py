@@ -1,6 +1,6 @@
 from src.Domain.entity.ACity import ACity
 from src.Domain.entity.AStation import AStation
-from src.Domain.ports.IMappers import IMappers
+from src.Infrastructure.interface.IMappers import IMappers
 
 
 class CityMapper(IMappers):

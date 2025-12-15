@@ -1,4 +1,4 @@
-from src.Domain.ports.INode import INode
+from src.Domain.interface.INode import INode
 
 class ANodeLinkedList(INode):
     def __init__(self, value, next_node=None):

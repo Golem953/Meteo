@@ -1,8 +1,8 @@
 # src/meteo_app/infrastructure/mappers/record_mapper.py
 from typing import Any, Dict, List
-# from ...domain.ports import IDataMapper
+# from ...domain.interface import IDataMapper
 from src.Domain.entity.ARecord import ARecord
-from src.Domain.ports.IMappers import IMappers  # ta classe Record métier
+from src.Infrastructure.interface.IMappers import IMappers  # ta classe Record métier
 
 
 class RecordMapper(IMappers):

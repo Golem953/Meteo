@@ -1,7 +1,7 @@
 import json
 from typing import Dict, List, Optional
 from Domain.service.Configuration import Configuration
-from src.Domain.ports.ICityStationProvider import ICityStationProvider
+from src.Infrastructure.interface.ICityStationProvider import ICityStationProvider
 
 
 class CityStationProvider(ICityStationProvider):

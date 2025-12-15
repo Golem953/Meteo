@@ -1,5 +1,5 @@
 from src.Domain.entity.ANodeLinkedList import ANodeLinkedList 
-from src.Domain.ports.IDataStructure import IDataStructure
+from Infrastructure.interface.IDataStructure import IDataStructure
 
 class LinkedList(IDataStructure):
     def __init__(self, first_node:ANodeLinkedList):

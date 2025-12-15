@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from Domain.ports.ICityStationProvider import ICityStationProvider
+from Infrastructure.interface.ICityStationProvider import ICityStationProvider
 
 
 class CityStationConfigMemoryProvider(ICityStationProvider):
