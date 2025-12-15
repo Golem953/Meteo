@@ -13,26 +13,25 @@ class CityBuilder(IBuilder):
 
     names_city: list[str]
     stations_choose: list[str]
-    city_mapper: CityMapper
+    city_mapper: CityMapper = CityMapper()
     _city_station_provider: ICityStationProvider
 
     def __init__(self) -> None:
-        self.city_mapper = CityMapper()
+        pass
 
     def set_names_city(self, names_city: list[str]) -> None:
         self.names_city = names_city
         return self
-    
+
     def set_stations_choose(self, stations_choose: list[str]) -> None:
         self.stations_choose = stations_choose
         return self
-    
-    
-    def set_city_station_provider(self, city_station_provider: ICityStationProvider) -> None:
+
+    def set_city_station_provider(
+        self, city_station_provider: ICityStationProvider
+    ) -> None:
         self._city_station_provider = city_station_provider
         return self
-    
-
 
     def build(self) -> dict[str, ACity]:
 
@@ -42,7 +41,6 @@ class CityBuilder(IBuilder):
             raise ValueError("Stations to choose not set")
         if self._city_station_provider is None:
             raise ValueError("City station provider not set")
-        
 
         cities: dict[str, ACity] = {}
         # print("Building cities...")
@@ -71,12 +69,14 @@ class CityBuilder(IBuilder):
 
         while actual_node != None:
 
-            stations.append(
-                StationBuilder(
-                    name_station=actual_node.get_value(),
-                    city_station_provider=self._city_station_provider,
-                ).build()
+            station_builder = (
+                StationBuilder()
+                .set_name_station(actual_node.get_value())
+                .set_city_station_provider(self._city_station_provider)
+                .build()
             )
+
+            stations.append(station_builder)
 
             actual_node = actual_node.get_next()
 

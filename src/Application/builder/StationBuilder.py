@@ -11,14 +11,27 @@ from src.Infrastructure.mappers.RecordMapper import RecordMapper
 from src.Infrastructure.structures.LinkedList import LinkedList
 from src.Domain.entity.ANodeLinkedList import ANodeLinkedList
 
+
 class StationBuilder(IBuilder):
 
-    def __init__(self, name_station: str, city_station_provider: ICityStationProvider):
+    name: str
+    _city_station_provider: ICityStationProvider
+    station_mapper: StationMapper = StationMapper()
+    record_mapper: RecordMapper = RecordMapper()
+    api_data_extractor: APIClient = APIClient()
+
+    def __init__(self) -> None:
+        pass    
+
+    def set_name_station(self, name_station: str) -> None:
         self.name = name_station
+        return self
+
+    def set_city_station_provider(
+        self, city_station_provider: ICityStationProvider
+    ) -> None:
         self._city_station_provider = city_station_provider
-        self.station_mapper = StationMapper()
-        self.record_mapper = RecordMapper()
-        self.api_data_extractor = APIClient()
+        return self
 
     def build(self) -> AStation:
 
