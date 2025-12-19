@@ -1,12 +1,8 @@
-# src/meteo_app/infrastructure/mappers/record_mapper.py
+"""RecordMapper infrastructure module."""
 from typing import Any, Dict, List
-
-from Infrastructure.factory.MesureFactory import MesureFactory
-# from ...domain.interface import IDataMapper
-from src.Domain.entity.ARecord import ARecord
-from src.Infrastructure.interface.IMappers import IMappers  # ta classe Record métier
-
-
+from infrastructure.factory.MesureFactory import MesureFactory
+from domain.entity.ARecord import ARecord
+from infrastructure.interface.IMappers import IMappers
 
 class RecordMapper(IMappers):
     """
@@ -15,6 +11,7 @@ class RecordMapper(IMappers):
     """
 
     def __init__(self):
+        """Initializes the instance."""
         self.mesure_factory = MesureFactory()
 
     def to_object(self, data: Dict[str, Any]) -> List[ARecord]:
@@ -22,22 +19,11 @@ class RecordMapper(IMappers):
         data : dict complet du JSON (avec "results": [ ... ])
         Retourne une liste d'objets ARecord
         """
-
-        
-
         records: List[ARecord] = []
-        for item in data.get("results", []):
+        for item in data.get('results', []):
             try:
-                record = ARecord(
-                    id=int(item.get("id", 0)),
-                    paris_date=item.get("heure_de_paris"),
-                    temperature=self.mesure_factory.get_mesure("temperature", float(item.get("temperature_en_degre_c", 0.0))),
-                    humidity=self.mesure_factory.get_mesure("humidity", float(item.get("humidite", 0.0))),
-                    # conversion Pa -> hPa
-                    pressure=self.mesure_factory.get_mesure("pressure", int(item.get("pression", 0)) // 100),
-                )
+                record = ARecord(id=int(item.get('id', 0)), paris_date=item.get('heure_de_paris'), temperature=self.mesure_factory.get_mesure('temperature', float(item.get('temperature_en_degre_c', 0.0))), humidity=self.mesure_factory.get_mesure('humidity', float(item.get('humidite', 0.0))), pressure=self.mesure_factory.get_mesure('pressure', int(item.get('pression', 0)) // 100))
                 records.append(record)
             except Exception as e:
-                # on ignore ou on log les entrées invalides
                 print(f"⚠️ Erreur de mapping sur l'item {item}: {e}")
         return records

@@ -1,6 +1,6 @@
-
-from src.Infrastructure.interface.IDataStructure import IDataStructure, T
-from src.Domain.entity.ANodeQueueList import ANodeQueueList
+"""QueueList infrastructure module."""
+from infrastructure.interface.IDataStructure import IDataStructure
+from domain.entity.ANodeQueueList import ANodeQueueList
 
 class QueueList(IDataStructure):
     """
@@ -9,18 +9,13 @@ class QueueList(IDataStructure):
     """
 
     def __init__(self, first_node: ANodeQueueList):
+        """Initializes the instance."""
         self.first_node = first_node
         self._items: list[ANodeQueueList] = [self.first_node]
-        
-    
-    # -----------------------------------
-    #              ADD (ENQUEUE)
-    # -----------------------------------
+
     def add_node(self, value: ANodeQueueList) -> None:
         """Add a value at the end of the queue (FIFO)."""
-
         self._items[len(self._items) - 1].set_next(value)
-        
         self._items.append(value)
 
     def remove_node(self) -> bool:
@@ -30,4 +25,3 @@ class QueueList(IDataStructure):
             return True
         except IndexError:
             return False
-

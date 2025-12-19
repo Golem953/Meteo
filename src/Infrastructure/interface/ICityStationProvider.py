@@ -1,4 +1,4 @@
-from typing import Protocol, List, Optional
+from typing import List, Optional
 from abc import ABC, abstractmethod
 
 class ICityStationProvider(ABC):

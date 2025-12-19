@@ -1,8 +1,8 @@
-from typing import Protocol
+"""IDataExtractor infrastructure interface module."""
 from abc import ABC, abstractmethod
 
 class IDataExtractor(ABC):
-    
-    @abstractmethod 
+
+    @abstractmethod
     def extract(self, limit: int) -> dict[str, any]:
-        pass
+        """Performs extract."""

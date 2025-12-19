@@ -2,4 +2,4 @@ autopep8 --in-place --recursive .
 
 ruff check . --fix
 
-pylint .\Meteo\
+pylint .\meteo\

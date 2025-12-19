@@ -1,8 +1,7 @@
+"""IDataStructure infrastructure interface module."""
 from abc import ABC, abstractmethod
-from typing import TypeVar, Generic, Iterable
-
-T = TypeVar("T")
-from abc import ABC, abstractmethod
+from typing import TypeVar, Generic
+T = TypeVar('T')
 
 class IDataStructure(ABC, Generic[T]):
     """
@@ -11,13 +10,9 @@ class IDataStructure(ABC, Generic[T]):
     This interface contains NO implementation.
     """
 
-
     @abstractmethod
     def add_node(self, value: T) -> None:
         """Add a value into the data structure."""
-        pass
-
     @abstractmethod
     def remove_node(self, value: T) -> None:
         """Remove a value from the data structure."""
-        pass

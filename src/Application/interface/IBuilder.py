@@ -1,12 +1,12 @@
-from asyncio import Protocol
+"""IBuilder application interface module."""
 
-from Domain.entity.ACity import ACity
+from domain.entity.ACity import ACity
 from abc import ABC, abstractmethod
 
+
 class IBuilder(ABC):
-    def __init__(self):
-        pass
+    """Interface for builder classes."""
 
     @abstractmethod
     def build(self) -> dict[str, ACity]:
-        pass
+        """Builds the object."""

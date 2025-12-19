@@ -1,14 +1,16 @@
+"""INode domain interface module."""
 from abc import ABC, abstractmethod
 
 class INode(ABC):
+
     @abstractmethod
     def get_value(self):
-        pass
+        """Gets the value."""
 
     @abstractmethod
     def get_next(self):
-        pass
+        """Gets the next."""
 
     @abstractmethod
     def set_next(self, next_node):
-        pass
+        """Sets the next."""

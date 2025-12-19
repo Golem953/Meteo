@@ -1,11 +1,12 @@
+"""IMesure domain interface module."""
 from abc import ABC, abstractmethod
 
 class IMesure(ABC):
 
     @abstractmethod
     def get_value(self) -> float:
-        pass
+        """Gets the value."""
 
     @abstractmethod
     def get_unit(self) -> str:
-        pass
+        """Gets the unit."""

@@ -1,24 +1,26 @@
-from src.Domain.interface.INode import INode
+"""ANodeQueueList domain module."""
+from domain.interface.INode import INode
 
 class ANodeQueueList(INode):
+    """Abstract node class for queue list structures."""
+
     def __init__(self, value, next_node=None):
+        """Initializes the instance."""
         self._value = value
         self._next = next_node
 
-    # -------------------------
-    #       INTERFACE METHODS
-    # -------------------------
     def get_value(self):
+        """Gets the value."""
         return self._value
 
     def get_next(self):
+        """Gets the next."""
         return self._next
 
     def set_next(self, next_node):
+        """Sets the next."""
         self._next = next_node
 
-    # -------------------------
-    #        UTILE (optionnel)
-    # -------------------------
     def __repr__(self):
-        return f"Node({self._value})"
+        """Returns a string representation of the instance."""
+        return f'Node({self._value})'

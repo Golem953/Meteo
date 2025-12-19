@@ -1,1 +1,1 @@
-# src/Infrastructure/http/__init__.py
+"""Package initialization."""
