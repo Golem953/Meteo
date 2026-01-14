@@ -13,7 +13,7 @@ class QueueList(IDataStructure):
         self.first_node = first_node
         self._items: list[ANodeQueueList] = [self.first_node]
 
-    def add_node(self, value: ANodeQueueList) -> None:
+    def add_node(self, value: ANodeQueueList):
         """Add a value at the end of the queue (FIFO)."""
         self._items[len(self._items) - 1].set_next(value)
         self._items.append(value)

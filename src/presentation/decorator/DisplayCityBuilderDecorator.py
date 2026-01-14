@@ -12,7 +12,7 @@ class DisplayCityBuilderDecorator:
         self.city_builder = city_builder
         self.city_station_provider = city_station_provider
 
-    def show(self) -> None:
+    def show(self):
         """Performs show."""
         city_builder: dict[str, ACity] = self.city_builder.set_names_city(self.city_name).set_stations_choose(self.city_stations).set_city_station_provider(self.city_station_provider).build()
         for name, city in city_builder.items():

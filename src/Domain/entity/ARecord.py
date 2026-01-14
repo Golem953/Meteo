@@ -23,6 +23,6 @@ class ARecord:
         self.humidity: AHumidity = humidity
         self.pressure: APressure = pressure
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Returns a string representation of the instance."""
         return f"ARecord(id={self.id}, paris_date={self.paris_date}, temperature={self.temperature.get_value()} {self.temperature.get_unit()}, humidity={self.humidity.get_value()} {self.humidity.get_unit()}, pressure={self.pressure.get_value()} {self.pressure.get_unit()})"

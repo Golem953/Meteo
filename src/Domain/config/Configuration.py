@@ -7,7 +7,7 @@ load_dotenv()
 class Configuration:
     _instance: Optional['Configuration'] = None
 
-    def __new__(cls):
+    def __new__(cls) -> 'Configuration':
         """Performs   new  ."""
         if cls._instance is None:
             cls._instance = super().__new__(cls)

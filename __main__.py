@@ -12,7 +12,7 @@ import sys
 from typing import List
 
 
-def _ensure_project_on_syspath() -> None:
+def _ensure_project_on_syspath():
     """Ajoute le dossier du projet au sys.path pour permettre les imports 'src.*'."""
     root_dir = os.path.dirname(__file__)
     if root_dir not in sys.path:
@@ -46,7 +46,7 @@ def _parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def main() -> int:
+def main():
     """Point d'entrée."""
     _ensure_project_on_syspath()
     from presentation.decorator.DisplayCityBuilderDecorator import (
