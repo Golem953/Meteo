@@ -1,1 +1,1 @@
-# src/presentation/__init__.py
+"""Package initialization."""

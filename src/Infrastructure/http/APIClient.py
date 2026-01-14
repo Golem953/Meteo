@@ -1,22 +1,21 @@
-# src/infrastructure/api_client.py
+"""APIClient infrastructure module."""
 import requests
-from src.Domain.configuration import configuration
-
+from domain.config.Configuration import Configuration
 
 class APIClient:
-    def __init__(
-        self, base_url: str = configuration.API_BASE_URL, records_url: str = configuration.API_RECORDS_URL, timeout: int = configuration.API_TIMEOUT
-    ):
-        self.base_url = base_url.rstrip("/")
-        self.records_url = records_url.rstrip("/")
-        self.timeout = timeout
-        self.session = requests.Session()
-        self.options_url = configuration.API_OPTIONS_URL
+    """Client for interacting with weather API."""
 
-    def extract(self, limit: int, file_name: str = "") -> dict:
-        # url = f"{self.records_url}&limit={limit}"
-        url = f"{self.base_url}/{file_name}/{self.options_url}&limit={limit}"
-        
+    def __init__(self, config: Configuration):
+        """Initializes the instance."""
+        self.base_url = config.API_BASE_URL.rstrip('/')
+        self.records_url = config.API_RECORDS_URL.rstrip('/')
+        self.timeout = config.API_TIMEOUT
+        self.session = requests.Session()
+        self.options_url = config.API_OPTIONS_URL
+
+    def call(self, limit: int, file_name: str='') -> dict:
+        """Performs call."""
+        url = f'{self.base_url}/{file_name}/{self.options_url}&limit={limit}'
         response = self.session.get(url, timeout=self.timeout)
         response.raise_for_status()
         return response.json()

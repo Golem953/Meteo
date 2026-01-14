@@ -1,1 +1,1 @@
-# src/Infrastructure/Extractor/__init__.py
+"""Package initialization."""

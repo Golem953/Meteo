@@ -1,1 +1,1 @@
-# src/Domain/__init__.py
+"""Package initialization."""

@@ -1,1 +1,1 @@
-# src/Infrastructure/mappers/__init__.py
+"""Package initialization."""
