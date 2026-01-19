@@ -3,15 +3,14 @@ from abc import ABC, abstractmethod
 
 class ICityStationProvider(ABC):
     """
-    Port d'accès au mapping ville -> stations -> fichier.
+    Interface for city-station provider classes.
 
-    Respecte ISP : interface très fine utilisée par l'application.
     """
 
     @abstractmethod
     def get_stations_for_city(self, city: str) -> List[str]:
         """
-        Ex: "toulouse" -> ["compans", "purpan", "ramonville"]
+        Example: "toulouse" -> ["compans", "purpan", "ramonville"]
         """
         ...
 

@@ -1,4 +1,4 @@
-"""IBuilder application interface module."""
+
 
 from domain.entity.ACity import ACity
 from abc import ABC, abstractmethod

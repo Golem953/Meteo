@@ -6,8 +6,6 @@ T = TypeVar('T')
 class IDataStructure(ABC, Generic[T]):
     """
     Interface representing a generic data structure.
-    It defines the contract for adding and searching elements.
-    This interface contains NO implementation.
     """
 
     @abstractmethod

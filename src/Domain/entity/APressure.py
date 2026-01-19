@@ -2,7 +2,7 @@
 from domain.interface.IMesure import IMesure
 
 class APressure(IMesure):
-    """Abstract class representing pressure measurements."""
+    """class representing pressure measurements."""
 
     def __init__(self, value: float, unit: str) -> None:
         """Initializes the instance."""

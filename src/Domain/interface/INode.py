@@ -2,7 +2,7 @@
 from abc import ABC, abstractmethod
 
 class INode(ABC):
-
+    """Interface for node classes."""
     @abstractmethod
     def get_value(self):
         """Gets the value."""

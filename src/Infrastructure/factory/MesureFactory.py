@@ -4,12 +4,13 @@ from domain.entity.AHumidity import AHumidity
 from domain.entity.APressure import APressure
 
 class MesureFactory:
+    """Factory class for creating measurement objects."""
 
     def __init__(self) -> None:
         """Initializes the instance."""
         pass
 
-    def get_mesure(self, mesure_type: str, valeur: float) -> object[AHumidity | APressure | ATemperature]:
+    def get_mesure(self, mesure_type: str, valeur: float) -> AHumidity | APressure | ATemperature:
         """Gets the mesure."""
         if mesure_type == 'temperature':
             return ATemperature(valeur, '°C')

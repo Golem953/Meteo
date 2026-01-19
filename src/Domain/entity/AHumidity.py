@@ -2,7 +2,7 @@
 from domain.interface.IMesure import IMesure
 
 class AHumidity(IMesure):
-    """Abstract class representing humidity measurements."""
+    """class representing humidity measurements."""
 
     def __init__(self, value: int, unit: str) -> None:
         """Initializes the instance."""

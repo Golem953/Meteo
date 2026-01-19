@@ -5,7 +5,7 @@ from pathlib import Path
 
 class JSONExtractor(IDataExtractor):
     """
-    Extrait des données depuis un fichier JSON local.
+    Extracts data from a local JSON file.
     """
 
     def __init__(self, json_path: str | Path):

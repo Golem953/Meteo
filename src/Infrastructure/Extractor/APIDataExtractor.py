@@ -5,6 +5,8 @@ from infrastructure.http.APIClient import APIClient
 
 class APIDataExtractor(IDataExtractor):
 
+    """Abstract base class for extracting data from APIs."""
+
     def __init__(self, config: Configuration) -> None:
         """Initializes the instance."""
         self.client = APIClient(config)

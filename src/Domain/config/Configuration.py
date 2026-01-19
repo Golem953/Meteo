@@ -1,10 +1,12 @@
-"""Configuration domain module."""
+
 import os
 from dotenv import load_dotenv
 from typing import Optional
 load_dotenv()
 
 class Configuration:
+    """Configuration domain module.(singleton)"""
+
     _instance: Optional['Configuration'] = None
 
     def __new__(cls) -> 'Configuration':

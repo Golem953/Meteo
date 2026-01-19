@@ -1,7 +1,7 @@
 """
-Point d'entrée de l'application meteo.
+Entry point of the weather application.
 
-Exemples :
+Examples:
   py .\\__main__.py -c "toulouse, paris" -s "compans cafarelli, universite paul sabatier"
 """
 
@@ -13,41 +13,41 @@ from typing import List
 
 
 def _ensure_project_on_syspath():
-    """Ajoute le dossier du projet au sys.path pour permettre les imports 'src.*'."""
+    """Adds the project folder to sys.path to allow 'src.*' imports."""
     root_dir = os.path.dirname(__file__)
     if root_dir not in sys.path:
         sys.path.insert(0, root_dir)
 
 
 def _parse_comma_separated(value: str) -> List[str]:
-    """Parse 'a, b, c' -> ['a', 'b', 'c'] (trim + suppression des vides)."""
+    """Parse 'a, b, c' -> ['a', 'b', 'c'] (trim + remove empties)."""
     return [v.strip() for v in value.split(",") if v.strip()]
 
 
 def _parse_args() -> argparse.Namespace:
-    """Parse les arguments CLI."""
+    """Parse CLI arguments."""
     parser = argparse.ArgumentParser(
-        prog="meteo", description="Lance l'app météo avec villes et stations."
+        prog="meteo", description="Launch the weather app with cities and stations."
     )
     parser.add_argument(
         "--city",
         "-c",
         type=_parse_comma_separated,
         default="toulouse",
-        help='Villes séparées par des virgules (ex: -c "toulouse, paris")',
+        help='Cities separated by commas (ex: -c "toulouse, paris")',
     )
     parser.add_argument(
         "--stations",
         "-s",
         type=_parse_comma_separated,
         default="compans cafarelli, universite paul sabatier",
-        help='Stations séparées par des virgules (ex: -s "compans cafarelli, universite paul sabatier")',
+        help='Stations separated by commas (ex: -s "compans cafarelli, universite paul sabatier")',
     )
     return parser.parse_args()
 
 
 def main():
-    """Point d'entrée."""
+    """Entry point."""
     _ensure_project_on_syspath()
     from presentation.decorator.DisplayCityBuilderDecorator import (
         DisplayCityBuilderDecorator,

@@ -4,7 +4,7 @@ from domain.interface.IMesure import IMesure
 
 
 class ATemperature(IMesure):
-
+    """class representing a temperature measurement."""
     def __init__(self, value: float, unit: str) -> None:
         """Initializes the instance."""
         self.value = value
