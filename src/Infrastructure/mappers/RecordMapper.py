@@ -6,8 +6,8 @@ from infrastructure.interface.IMappers import IMappers
 
 class RecordMapper(IMappers):
     """
-    Mappe les résultats JSON extraits (liste de mesures météo)
-    vers une liste d'objets ARecord du domaine.
+    Maps the extracted JSON results (list of weather measurements)
+    to a list of ARecord objects.
     """
 
     def __init__(self):

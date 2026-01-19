@@ -2,7 +2,7 @@
 from domain.interface.INode import INode
 
 class ANodeQueueList(INode):
-    """Abstract node class for queue list structures."""
+    """class for queue list structures."""
 
     def __init__(self, value, next_node=None):
         """Initializes the instance."""

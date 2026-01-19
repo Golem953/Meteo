@@ -5,8 +5,7 @@ from infrastructure.interface.IMappers import IMappers
 
 class CityMapper(IMappers):
     """
-    Mapper pour convertir les données de la ville
-    depuis le format JSON vers un objet de domaine.
+    Mapper to convert city data from JSON format to a City object.
     """
 
     def __init__(self):
