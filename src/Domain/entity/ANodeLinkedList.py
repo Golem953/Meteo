@@ -2,7 +2,7 @@
 from domain.interface.INode import INode
 
 class ANodeLinkedList(INode):
-    """Abstract node class for linked list structures."""
+    """class for linked list structures."""
 
     def __init__(self, value, next_node=None):
         """Initializes the instance."""

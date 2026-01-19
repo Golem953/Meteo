@@ -6,7 +6,7 @@ from domain.entity.APressure import APressure
 
 
 class ARecord:
-    """Abstract class representing weather records."""
+    """class representing weather records."""
 
     def __init__(
         self,

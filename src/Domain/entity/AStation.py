@@ -4,7 +4,7 @@ from domain.entity.ARecord import ARecord
 
 
 class AStation:
-    """Abstract class representing a weather station."""
+    """class representing a weather station."""
 
     def __init__(
         self, name: str, file_name: str, list_of_records: None | list[ARecord]

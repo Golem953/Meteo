@@ -7,6 +7,8 @@ from infrastructure.provider import CityStationConfigMemoryProvider
 
 class DisplayCityBuilderDecorator:
 
+    """Decorator for CityBuilder that displays city building information."""
+
     def __init__(
         self,
         city_name: list[str],

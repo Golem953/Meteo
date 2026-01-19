@@ -2,7 +2,7 @@
 from abc import ABC, abstractmethod
 
 class IMesure(ABC):
-
+    """Interface for mesure classes."""
     @abstractmethod
     def get_value(self) -> float:
         """Gets the value."""

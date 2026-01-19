@@ -4,6 +4,7 @@ from domain.entity.AHumidity import AHumidity
 from domain.entity.APressure import APressure
 
 class MesureFactory:
+    """Factory class for creating measurement objects."""
 
     def __init__(self) -> None:
         """Initializes the instance."""

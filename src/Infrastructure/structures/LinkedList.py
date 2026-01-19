@@ -4,6 +4,8 @@ from infrastructure.interface.IDataStructure import IDataStructure
 
 class LinkedList(IDataStructure):
 
+    """class for linked list data structure."""
+
     def __init__(self, first_node: ANodeLinkedList):
         """Initializes the instance."""
         self.first_node = first_node

@@ -5,8 +5,7 @@ from infrastructure.interface.IMappers import IMappers
 
 class StationMapper(IMappers):
     """
-    Mapper pour convertir les données JSON des stations météorologiques 
-    vers des objets de domaine AStation.
+    Mapper to convert JSON data of weather stations to AStation objects.
     """
 
     def __init__(self):

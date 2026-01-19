@@ -3,6 +3,8 @@ from typing import List, Optional
 from infrastructure.interface.ICityStationProvider import ICityStationProvider
 
 class CityStationConfigMemoryProvider(ICityStationProvider):
+    """Provider for city-station configuration(in memory) mappings."""
+
     _instance = None
 
     def __new__(cls):
