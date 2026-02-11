@@ -1,8 +1,8 @@
 """DisplayCityBuilderDecorator presentation module."""
 
-from application.builder.CityBuilder import CityBuilder
-from domain.entity.ACity import ACity
-from infrastructure.provider import CityStationConfigMemoryProvider
+from application.builder.city_builder import CityBuilder
+from domain.entity.city import City
+from infrastructure.provider import city_station_config_memory_provider
 
 
 class DisplayCityBuilderDecorator:
@@ -13,7 +13,7 @@ class DisplayCityBuilderDecorator:
         self,
         city_name: list[str],
         city_stations: list[str],
-        city_station_provider: CityStationConfigMemoryProvider,
+        city_station_provider: city_station_config_memory_provider,
         city_builder: CityBuilder,
     ):
         """Initializes the instance."""
@@ -24,7 +24,7 @@ class DisplayCityBuilderDecorator:
 
     def show(self):
         """Performs show."""
-        city_builder: dict[str, ACity] = (
+        city_builder: dict[str, City] = (
             CityBuilder()
             .set_names_city(self.city_name)
             .set_stations_choose(self.city_stations)

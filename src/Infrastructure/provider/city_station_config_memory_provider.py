@@ -1,6 +1,6 @@
 """CityStationConfigMemoryProvider infrastructure module."""
 from typing import List, Optional
-from infrastructure.interface.ICityStationProvider import ICityStationProvider
+from infrastructure.interface.icity_station_provider import ICityStationProvider
 
 class CityStationConfigMemoryProvider(ICityStationProvider):
     """Provider for city-station configuration(in memory) mappings."""

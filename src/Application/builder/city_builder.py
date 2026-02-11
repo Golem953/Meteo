@@ -1,13 +1,13 @@
 """City builder module."""
 
-from application.builder.StationBuilder import StationBuilder
-from domain.entity.ANodeQueueList import ANodeQueueList
-from infrastructure.interface.ICityStationProvider import ICityStationProvider
-from infrastructure.structures.QueueList import QueueList
-from infrastructure.mappers.CityMapper import CityMapper
-from application.interface.IBuilder import IBuilder
-from domain.entity.ACity import ACity
-from domain.config.Configuration import Configuration
+from application.builder.station_builder import StationBuilder
+from domain.entity.node_queue_list import NodeQueueList
+from infrastructure.interface.icity_station_provider import ICityStationProvider
+from infrastructure.structures.queue_list import QueueList
+from infrastructure.mappers.city_mapper import CityMapper
+from application.interface.ibuilder import IBuilder
+from domain.entity.city import City
+from domain.config.configuration import Configuration
 
 
 class CityBuilder(IBuilder):
@@ -39,7 +39,7 @@ class CityBuilder(IBuilder):
         self._city_station_provider = city_station_provider
         return self
 
-    def build(self) -> dict[str, ACity]:
+    def build(self) -> dict[str, City]:
         """Builds and returns a dictionary of cities."""
         if self.names_city is None:
             raise ValueError("Names of cities not set")
@@ -47,7 +47,7 @@ class CityBuilder(IBuilder):
             raise ValueError("Stations to choose not set")
         if self._city_station_provider is None:
             raise ValueError("City station provider not set")
-        cities: dict[str, ACity] = {}
+        cities: dict[str, City] = {}
         config = Configuration()
         for name_city in self.names_city:
             station_keys = self._city_station_provider.get_stations_for_city(name_city)
@@ -56,10 +56,10 @@ class CityBuilder(IBuilder):
             for station_key in station_keys:
                 if station_key in self.stations_choose:
                     if first_station:
-                        linked_list_station = QueueList(ANodeQueueList(station_key))
+                        linked_list_station = QueueList(NodeQueueList(station_key))
                         first_station = False
                     else:
-                        linked_list_station.add_node(ANodeQueueList(station_key))
+                        linked_list_station.add_node(NodeQueueList(station_key))
         actual_node = linked_list_station.first_node
         while actual_node is not None:
             station_builder = (

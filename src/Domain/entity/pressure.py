@@ -1,7 +1,7 @@
 """APressure domain module."""
-from domain.interface.IMesure import IMesure
+from domain.interface.imesure import IMesure
 
-class APressure(IMesure):
+class Pressure(IMesure):
     """class representing pressure measurements."""
 
     def __init__(self, value: float, unit: str) -> None:

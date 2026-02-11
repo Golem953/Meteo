@@ -1,7 +1,7 @@
-"""ANodeQueueList domain module."""
-from domain.interface.INode import INode
+"""NodeQueueList domain module."""
+from domain.interface.inode import INode
 
-class ANodeQueueList(INode):
+class NodeQueueList(INode):
     """class for queue list structures."""
 
     def __init__(self, value, next_node=None):

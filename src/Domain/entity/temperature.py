@@ -1,9 +1,9 @@
-"""ATemperature domain module."""
+"""Temperature domain module."""
 
-from domain.interface.IMesure import IMesure
+from domain.interface.imesure import IMesure
 
 
-class ATemperature(IMesure):
+class Temperature(IMesure):
     """class representing a temperature measurement."""
     def __init__(self, value: float, unit: str) -> None:
         """Initializes the instance."""

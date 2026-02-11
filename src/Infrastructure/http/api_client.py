@@ -1,6 +1,6 @@
 """APIClient infrastructure module."""
 import requests
-from domain.config.Configuration import Configuration
+from domain.config.configuration import Configuration
 
 class APIClient:
     """Client for interacting with weather API."""

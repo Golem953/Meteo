@@ -1,7 +1,7 @@
 """MesureFactory infrastructure module."""
-from domain.entity.ATemperature import ATemperature
-from domain.entity.AHumidity import AHumidity
-from domain.entity.APressure import APressure
+from domain.entity.temperature import Temperature
+from domain.entity.humidity import Humidity
+from domain.entity.pressure import Pressure
 
 class MesureFactory:
     """Factory class for creating measurement objects."""
@@ -10,13 +10,13 @@ class MesureFactory:
         """Initializes the instance."""
         pass
 
-    def get_mesure(self, mesure_type: str, valeur: float) -> AHumidity | APressure | ATemperature:
+    def get_mesure(self, mesure_type: str, valeur: float) -> Humidity | Pressure | Temperature:
         """Gets the mesure."""
         if mesure_type == 'temperature':
-            return ATemperature(valeur, '°C')
+            return Temperature(valeur, '°C')
         elif mesure_type == 'humidity':
-            return AHumidity(valeur, '%')
+            return Humidity(valeur, '%')
         elif mesure_type == 'pressure':
-            return APressure(valeur, 'Pa')
+            return Pressure(valeur, 'Pa')
         else:
             raise ValueError(f'Unknown mesure type: {mesure_type}')

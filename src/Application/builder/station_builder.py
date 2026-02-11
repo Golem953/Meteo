@@ -1,12 +1,12 @@
 """Station builder module."""
 
-from domain.config.Configuration import Configuration
-from infrastructure.extractor.APIDataExtractor import APIDataExtractor
-from domain.entity.AStation import AStation
-from infrastructure.interface.ICityStationProvider import ICityStationProvider
-from application.interface.IBuilder import IBuilder
-from infrastructure.mappers.StationMapper import StationMapper
-from infrastructure.mappers.RecordMapper import RecordMapper
+from domain.config.configuration import Configuration
+from infrastructure.extractor.api_data_extractor import APIDataExtractor
+from domain.entity.station import Station
+from infrastructure.interface.icity_station_provider import ICityStationProvider
+from application.interface.ibuilder import IBuilder
+from infrastructure.mappers.station_mapper import StationMapper
+from infrastructure.mappers.record_mapper import RecordMapper
 
 
 class StationBuilder(IBuilder):
@@ -33,7 +33,7 @@ class StationBuilder(IBuilder):
         self._city_station_provider = city_station_provider
         return self
 
-    def build(self) -> AStation:
+    def build(self) -> Station:
         """Builds the object."""
         file_name = self._city_station_provider.get_file_for_station(self.name)
         data_extracted = self.api_data_extractor.extract(file_name=file_name, limit=20)

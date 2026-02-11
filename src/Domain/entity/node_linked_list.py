@@ -1,7 +1,7 @@
 """ANodeLinkedList entity module."""
-from domain.interface.INode import INode
+from domain.interface.inode import INode
 
-class ANodeLinkedList(INode):
+class NodeLinkedList(INode):
     """class for linked list structures."""
 
     def __init__(self, value, next_node=None):

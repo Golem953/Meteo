@@ -1,7 +1,7 @@
 """APIDataExtractor infrastructure module."""
-from domain.config.Configuration import Configuration
-from infrastructure.interface.IDataExtractor import IDataExtractor
-from infrastructure.http.APIClient import APIClient
+from domain.config.configuration import Configuration
+from infrastructure.interface.idata_extractor import IDataExtractor
+from infrastructure.http.api_client import APIClient
 
 class APIDataExtractor(IDataExtractor):
 

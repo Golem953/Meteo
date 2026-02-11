@@ -1,7 +1,7 @@
 """AHumidity entity module."""
-from domain.interface.IMesure import IMesure
+from domain.interface.imesure import IMesure
 
-class AHumidity(IMesure):
+class Humidity(IMesure):
     """class representing humidity measurements."""
 
     def __init__(self, value: int, unit: str) -> None:

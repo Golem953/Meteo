@@ -1,5 +1,5 @@
 """JSONDataExtractor infrastructure module."""
-from infrastructure.interface.IDataExtractor import IDataExtractor
+from infrastructure.interface.idata_extractor import IDataExtractor
 import json
 from pathlib import Path
 

@@ -1,6 +1,6 @@
 """LinkedList infrastructure module."""
-from domain.entity.ANodeLinkedList import ANodeLinkedList
-from infrastructure.interface.IDataStructure import IDataStructure
+from domain.entity.node_linked_list import ANodeLinkedList
+from infrastructure.interface.idata_structure import IDataStructure
 
 class LinkedList(IDataStructure):
 
