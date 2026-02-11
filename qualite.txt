@@ -3,3 +3,8 @@ autopep8 --in-place --recursive .
 ruff check . --fix
 
 pylint .\meteo\
+
+
+coverage :
+
+pytest --cov=src

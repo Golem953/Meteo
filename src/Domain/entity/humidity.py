@@ -1,9 +1,13 @@
 """AHumidity entity module."""
+from dataclasses import dataclass
 from domain.interface.imesure import IMesure
 
+@dataclass
 class Humidity(IMesure):
     """class representing humidity measurements."""
-
+    value: float
+    unit: str
+    
     def __init__(self, value: int, unit: str) -> None:
         """Initializes the instance."""
         self.value = value

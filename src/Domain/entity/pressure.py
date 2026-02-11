@@ -1,9 +1,13 @@
 """APressure domain module."""
+from dataclasses import dataclass
 from domain.interface.imesure import IMesure
 
+@dataclass
 class Pressure(IMesure):
     """class representing pressure measurements."""
-
+    value: float
+    unit: str
+    
     def __init__(self, value: float, unit: str) -> None:
         """Initializes the instance."""
         self.value = value

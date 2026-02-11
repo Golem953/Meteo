@@ -58,10 +58,12 @@ class CityBuilder(IBuilder):
             for station_key in station_keys:
                 if station_key in self.stations_choose:
                     if first_station:
-                        linked_list_station = LinkedList(NodeLinkedList(station_key))
+                        linked_list_station = QueueList(NodeQueueList(station_key))
+                        # linked_list_station = LinkedList(NodeLinkedList(station_key))
                         first_station = False
                     else:
-                        linked_list_station.add_node(NodeLinkedList(station_key))
+                        linked_list_station.add_node(NodeQueueList(station_key))
+                        # linked_list_station.add_node(NodeLinkedList(station_key))
         actual_node = linked_list_station.first_node
         while actual_node is not None:
             station_builder = (
