@@ -1,8 +1,10 @@
 """City builder module."""
 
 from application.builder.station_builder import StationBuilder
+from domain.entity.node_linked_list import NodeLinkedList
 from domain.entity.node_queue_list import NodeQueueList
 from infrastructure.interface.icity_station_provider import ICityStationProvider
+from infrastructure.structures.linked_list import LinkedList
 from infrastructure.structures.queue_list import QueueList
 from infrastructure.mappers.city_mapper import CityMapper
 from application.interface.ibuilder import IBuilder
@@ -56,10 +58,10 @@ class CityBuilder(IBuilder):
             for station_key in station_keys:
                 if station_key in self.stations_choose:
                     if first_station:
-                        linked_list_station = QueueList(NodeQueueList(station_key))
+                        linked_list_station = LinkedList(NodeLinkedList(station_key))
                         first_station = False
                     else:
-                        linked_list_station.add_node(NodeQueueList(station_key))
+                        linked_list_station.add_node(NodeLinkedList(station_key))
         actual_node = linked_list_station.first_node
         while actual_node is not None:
             station_builder = (

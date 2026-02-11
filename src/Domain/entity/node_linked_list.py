@@ -1,4 +1,4 @@
-"""ANodeLinkedList entity module."""
+"""NodeLinkedList entity module."""
 from domain.interface.inode import INode
 
 class NodeLinkedList(INode):

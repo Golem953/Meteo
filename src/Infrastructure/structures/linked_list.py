@@ -1,16 +1,16 @@
 """LinkedList infrastructure module."""
-from domain.entity.node_linked_list import ANodeLinkedList
+from domain.entity.node_linked_list import NodeLinkedList
 from infrastructure.interface.idata_structure import IDataStructure
 
 class LinkedList(IDataStructure):
 
     """class for linked list data structure."""
 
-    def __init__(self, first_node: ANodeLinkedList):
+    def __init__(self, first_node: NodeLinkedList):
         """Initializes the instance."""
         self.first_node = first_node
 
-    def add_node(self, first_node: ANodeLinkedList):
+    def add_node(self, first_node: NodeLinkedList):
         """Performs add node."""
         self.get_last().set_next(first_node)
 
