@@ -49,11 +49,11 @@ def _parse_args() -> argparse.Namespace:
 def main():
     """Entry point."""
     _ensure_project_on_syspath()
-    from presentation.decorator.DisplayCityBuilderDecorator import (
+    from presentation.decorator.display_city_builder_decorator import (
         DisplayCityBuilderDecorator,
     )
-    from src.application.builder.CityBuilder import CityBuilder
-    from src.infrastructure.provider.CityStationConfigMemoryProvider import (
+    from application.builder.city_builder import CityBuilder
+    from infrastructure.provider.city_station_config_memory_provider import (
         CityStationConfigMemoryProvider,
     )
 
