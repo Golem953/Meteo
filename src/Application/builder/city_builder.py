@@ -45,18 +45,24 @@ class CityBuilder(IBuilder):
         """Builds and returns a dictionary of cities."""
         if self.names_city is None:
             raise ValueError("Names of cities not set")
+
         if self.stations_choose is None:
             raise ValueError("Stations to choose not set")
+
         if self._city_station_provider is None:
             raise ValueError("City station provider not set")
+
         cities: dict[str, City] = {}
         config = Configuration()
         for name_city in self.names_city:
             station_keys = self._city_station_provider.get_stations_for_city(name_city)
+
             stations = []
             first_station = True
             for station_key in station_keys:
+
                 if station_key in self.stations_choose:
+
                     if first_station:
                         linked_list_station = QueueList(NodeQueueList(station_key))
                         # linked_list_station = LinkedList(NodeLinkedList(station_key))
@@ -64,6 +70,11 @@ class CityBuilder(IBuilder):
                     else:
                         linked_list_station.add_node(NodeQueueList(station_key))
                         # linked_list_station.add_node(NodeLinkedList(station_key))
+                else:
+                    raise ValueError(
+                        f"Station '{self.stations_choose}' not in the list of stations to choose"
+                    )
+                
         actual_node = linked_list_station.first_node
         while actual_node is not None:
             station_builder = (
